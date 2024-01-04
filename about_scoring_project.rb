@@ -33,25 +33,27 @@ def score(dice)
   return 0 if dice.empty?
 
   total_score = 0
-  dice.sort
 
-  10.times do |i|
+  (1..6).each do |i|
     if dice.count(i) >= 3
-      total_score += i * 100
-      total_score *= 10 if i == 1
-      number_occurrences = dice.count(i)
+      if i == 1
+        total_score += 1000
+      else
+        total_score += i * 100
+      end
 
+      # remove sets of 3 equal numbers: first remove all occurrences and then push remaining ones
+      occurrences = dice.count(i)
       dice.delete(i)
-      while number_occurrences > 3
+      (occurrences-3).times do
         dice.push(i)
-        number_occurrences -= 1
       end
     end
   end
 
   dice.each do |roll|
-    total_score += 50 if roll == 5
     total_score += 100 if roll == 1
+    total_score += 50 if roll == 5
   end
 
   total_score
