@@ -18,9 +18,9 @@ def triangle(a, b, c)
   raise TriangleError if a + b <= c || a + c <= b || b + c <= a
 
   case
-    when a == b && b == c && a == c then :equilateral
-    when a != b && b != c && a != c then :scalene
-    else                                 :isosceles
+  when a == b && b == c && a == c then :equilateral
+  when a != b && b != c && a != c then :scalene
+  else :isosceles
   end
 end
 

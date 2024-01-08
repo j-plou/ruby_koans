@@ -165,5 +165,4 @@ class AboutClassMethods < Neo::Koan
     fido = Dog.new
     assert_equal __, fido.class.another_class_method
   end
-
 end

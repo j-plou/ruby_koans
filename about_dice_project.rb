@@ -41,7 +41,7 @@ class AboutDiceProject < Neo::Koan
     second_time = dice.values
 
     assert_not_equal first_time, second_time,
-      "Two rolls should not be equal"
+                     "Two rolls should not be equal"
 
     # THINK ABOUT IT:
     #
@@ -59,5 +59,4 @@ class AboutDiceProject < Neo::Koan
     dice.roll(1)
     assert_equal 1, dice.values.size
   end
-
 end

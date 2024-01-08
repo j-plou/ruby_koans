@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 class AboutKeywordArguments < Neo::Koan
-
   def method_with_keyword_arguments(one: 1, two: 'two')
     [one, two]
   end
@@ -39,5 +38,4 @@ class AboutKeywordArguments < Neo::Koan
     end
     assert_match(/missing keyword: :one/, exception.message)
   end
-
 end

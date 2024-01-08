@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 class AboutPatternMatching < Neo::Koan
-
   def test_pattern_may_not_match
     begin
       case [true, false]
@@ -16,11 +15,11 @@ class AboutPatternMatching < Neo::Koan
 
   def test_we_can_use_else
     result = case [true, false]
-    in [a, b] if a == b
-      :match
-    else
-     :no_match
-    end
+             in [a, b] if a == b
+               :match
+             else
+               :no_match
+             end
 
     assert_equal __, result
   end
@@ -211,5 +210,4 @@ class AboutPatternMatching < Neo::Koan
     assert_equal __, hash_pattern_with_sugar(LetterAccountant.new('aaabbc'))
     assert_equal __, hash_pattern_with_sugar(LetterAccountant.new('xyz'))
   end
-
 end
